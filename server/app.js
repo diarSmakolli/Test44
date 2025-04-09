@@ -7,6 +7,7 @@ var express = require("express");
 var config = require("config");
 var mongoose = require("mongoose");
 var util = require("./config/util.js");
+var userRoute = require('./routes/user.route.js');
 
 var games = {};
 var users = 0;
@@ -20,6 +21,8 @@ app.set("port", 8000);
 http.createServer(app).listen(app.get("port"), function () {
   console.log("server is listening on port 8000");
 });
+
+app.use('/api/users', userRoute);
 
 // configure database
 // require("./config/database")(app, mongoose);

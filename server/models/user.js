@@ -3,7 +3,7 @@ var util = require("../config/util.js");
 
 var UserSchema = mongoose.Schema({
   name: String,
-  email: String,
+  email: String, 
   password: String,
   lastConnection: { type: Date, default: Date.now },
 });
@@ -14,4 +14,5 @@ UserSchema.methods = {
   },
 };
 
-mongoose.model("User", UserSchema);
+module.exports = mongoose.model('User', userSchema);
+
